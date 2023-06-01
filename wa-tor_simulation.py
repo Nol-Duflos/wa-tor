@@ -68,6 +68,22 @@ class World():
                  for x in range(self.width)] for y in range(self.height)]
     
 
-    def show_world
+    def getWorldImage(self):
+        im = self.getWorldImageArray()
+        fig = plt.figure(figsize=(8.3333, 6.25), dpi=72)
+        ax = fig.add_subplot(111)
+        ax.imshow(im, interpolation='nearest', cmap=cm)
 
-        
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.axis('off')
+        return fig
+    
+    def showWorld(self):
+        fig = self.getWorldImage()
+        plt.show()
+        plt.close(fig)
+
+    def getNeighbours(self, x, y):
+        neighbours = {}
+        for dx, dy in ()
